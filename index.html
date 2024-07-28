@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات حول السرطان</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH/4ezuVxHg6ErkIw+Wl5CxDf/sHtbOg9qX5U9+7hjTfB/+6ZLP1ewZe8DZGhGcG+UBMa3Ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: #1e2a38;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+        nav {
+            background: #00695c;
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            margin: 0.5rem 1rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        nav a:hover {
+            color: #ffab00;
+            border-bottom: 2px solid #ffab00;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section-title {
+            color: #1e2a38;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        .section-content {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .accordion {
+            background-color: #fff;
+            color: #00695c;
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-bottom: 1px solid #ddd;
+        }
+        .accordion:hover, .active {
+            background-color: #00695c;
+            color: #fff;
+        }
+        .panel {
+            padding: 0 1rem;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+        footer {
+            background: #1e2a38;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+        #three-js-canvas {
+            width: 100%;
+            height: 500px;
+            margin-top: 2rem;
+            border-radius: 8px;
+            background-color: #e0f2f1;
+        }
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0.5rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .section-content {
+                padding: 1rem;
+            }
+            #three-js-canvas {
+                height: 400px;
+            }
+        }
+        @media (max-width: 480px) {
+            nav a {
+                margin: 0.3rem;
+                font-size: 1rem;
+            }
+            header {
+                padding: 1.5rem 1rem;
+            }
+            .container {
+                padding: 0 0.5rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .section-content {
+                padding: 0.8rem;
+            }
+            #three-js-canvas {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>معلومات حول السرطان</h1>
+</header>
+
+<nav>
+    <a href="#about-cancer">حول السرطان</a>
+    <a href="#types">أنواع السرطان</a>
+    <a href="#diagnosis">التشخيص</a>
+    <a href="#treatment">العلاج</a>
+    <a href="#prevention">الوقاية</a>
+    <a href="#support">الدعم</a>
+    <a href="#three-js-section">عرض ثلاثي الأبعاد</a>
+</nav>
+
+<div class="container">
+    <section id="about-cancer">
+        <h2 class="section-title">حول السرطان</h2>
+        <div class="section-content">
+            <p>السرطان هو مجموعة من الأمراض التي تتميز بنمو خلايا غير طبيعي ينمو دون سيطرة ويمكن أن ينتشر إلى أجزاء أخرى من الجسم. يمكن أن يصيب السرطان أي جزء من الجسم ولديه القدرة على التسبب في مضاعفات صحية خطيرة. تختلف أسباب الإصابة بالسرطان من عوامل وراثية إلى بيئية وسلوكية، مثل التدخين وتناول الكحول والتعرض للإشعاع.</p>
+            <img src="https://images.unsplash.com/photo-1585100546597-41dbdcb08240" alt="حول السرطان" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+        </div>
+    </section>
+
+    <section id="types">
+        <h2 class="section-title">أنواع السرطان</h2>
+        <div class="section-content">
+            <button class="accordion">سرطان الثدي</button>
+            <div class="panel">
+                <p>يعد سرطان الثدي من أكثر أنواع السرطان شيوعًا بين النساء، وينشأ نتيجة نمو غير طبيعي لخلايا الثدي. يمكن علاجه إذا تم اكتشافه مبكرًا.</p>
+                <img src="https://images.unsplash.com/photo-1600282621056-5aa702a4a7cc" alt="سرطان الثدي" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+            </div>
+
+            <button class="accordion">سرطان الرئة</button>
+            <div class="panel">
+                <p>يُعتبر سرطان الرئة السبب الرئيسي لوفيات السرطان عالميًا. التدخين هو السبب الرئيسي لهذا النوع من السرطان.</p>
+                <img src="https://images.unsplash.com/photo-1577260108457-9897888f0d55" alt="سرطان الرئة" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+            </div>
+
+            <button class="accordion">سرطان القولون</button>
+            <div class="panel">
+                <p>يبدأ سرطان القولون في القولون أو المستقيم، وقد يتطور من الأورام الحميدة التي تُعرف بالبوليبات. من المهم إجراء الفحوصات الدورية للكشف المبكر.</p>
+                <img src="https://images.unsplash.com/photo-1584999115445-2637d8fbb659" alt="سرطان القولون" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+            </div>
+
+            <button class="accordion">سرطان الدم (اللوكيميا)</button>
+            <div class="panel">
+                <p>يبدأ سرطان الدم في الأنسجة المكونة للدم مثل نخاع العظام، ويؤدي إلى إنتاج أعداد كبيرة من خلايا الدم البيضاء غير الطبيعية.</p>
+                <img src="https://images.unsplash.com/photo-1564464825-86d3172c1d70" alt="سرطان الدم" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+            </div>
+
+            <button class="accordion">سرطان الغدد الليمفاوية</button>
+            <div class="panel">
+                <p>يصيب هذا النوع من السرطان الجهاز اللمفاوي، وهو جزء من الجهاز المناعي، ويشمل الغدد الليمفاوية والطحال والغدة الزعترية.</p>
+                <img src="https://images.unsplash.com/photo-1593378298375-1dc0de9b7d29" alt="سرطان الغدد الليمفاوية" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+            </div>
+        </div>
+    </section>
+
+    <section id="diagnosis">
+        <h2 class="section-title">التشخيص</h2>
+        <div class="section-content">
+            <p>تشخيص السرطان يتضمن مجموعة من الإجراءات مثل التاريخ الطبي والفحص البدني والتحاليل المخبرية وصور الأشعة مثل الأشعة السينية والرنين المغناطيسي، بالإضافة إلى الخزعات التي تتضمن أخذ عينات من الأنسجة للفحص المجهري. التقنيات الحديثة مثل التصوير بالموجات فوق الصوتية والتصوير المقطعي بالإصدار البوزيتروني (PET) تسهم في تحسين دقة التشخيص.</p>
+            <img src="https://images.unsplash.com/photo-1588652576641-43b9b1c7d1a3" alt="تشخيص السرطان" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+        </div>
+    </section>
+
+    <section id="treatment">
+        <h2 class="section-title">العلاج</h2>
+        <div class="section-content">
+            <p>تشمل خيارات علاج السرطان الجراحة والإشعاع والعلاج الكيميائي والعلاج المناعي والعلاج الموجه. يعتمد اختيار العلاج على نوع السرطان ومرحلته وحالة المريض الصحية العامة. في السنوات الأخيرة، تم تطوير تقنيات جديدة مثل العلاج بالجينات والعلاج بالخلايا الجذعية التي أظهرت نتائج واعدة في بعض الحالات.</p>
+            <img src="https://images.unsplash.com/photo-1556702006-4df8e06529ec" alt="علاج السرطان" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+        </div>
+    </section>
+
+    <section id="prevention">
+        <h2 class="section-title">الوقاية</h2>
+        <div class="section-content">
+            <p>الوقاية من السرطان تتضمن اتخاذ خطوات لتقليل مخاطر الإصابة به. تشمل الإجراءات الوقائية الرئيسية:</p>
+            <ul>
+                <li>الإقلاع عن التدخين</li>
+                <li>الحفاظ على وزن صحي</li>
+                <li>اتباع نظام غذائي متوازن</li>
+                <li>ممارسة النشاط البدني بانتظام</li>
+                <li>تقليل التعرض للإشعاع والمواد الكيميائية الضارة</li>
+                <li>تلقي التطعيمات ضد الفيروسات المرتبطة بالسرطان مثل فيروس الورم الحليمي البشري (HPV) والتهاب الكبد الوبائي B</li>
+            </ul>
+            <img src="https://images.unsplash.com/photo-1542281286-1c56b40a4b65" alt="الوقاية من السرطان" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+        </div>
+    </section>
+
+    <section id="support">
+        <h2 class="section-title">الدعم</h2>
+        <div class="section-content">
+            <p>التعامل مع السرطان يمكن أن يكون تحديًا جسديًا وعاطفيًا. يمكن الحصول على الدعم من العائلة والأصدقاء وكذلك من المتخصصين مثل الأطباء النفسيين والعاملين الاجتماعيين ومجموعات الدعم. هناك أيضًا العديد من المنظمات التي تقدم المساعدة والمعلومات مثل الجمعية الوطنية لمكافحة السرطان. من المهم البحث عن الدعم المناسب وعدم مواجهة التحديات بمفردك.</p>
+            <img src="" alt="الدعم لمرضى السرطان" style="width:100%; border-radius: 8px; margin-top: 1rem;">
+        </div>
+    </section>
+
+    <section id="three-js-section">
+        <h2 class="section-title">عرض ثلاثي الأبعاد</h2>
+        <div id="three-js-canvas"></div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 معلومات حول السرطان. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script src=""></script>
+<script>
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll('.section-content');
+
+    const revealSection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const sectionObserver = new IntersectionObserver(revealSection, {
+        root: null,
+        threshold: 0.15
+    });
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Accordion functionality
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(acc => {
+        acc.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            if (panel.style.display === 'block') {
+                panel.style.display = 'none';
+            } else {
+                panel.style.display = 'block';
+            }
+        });
+    });
+
+    // Three.js 3D rendering
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('three-js-canvas').appendChild(renderer.domElement);
+
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 5;
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    });
+</script>
+
+</body>
+</html>
